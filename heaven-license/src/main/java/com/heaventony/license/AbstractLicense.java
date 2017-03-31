@@ -26,7 +26,7 @@ public class AbstractLicense {
         CipherParam cipherParam = new DefaultCipherParam(param.getStorePwd());
 
         KeyStoreParam privateStoreParam =
-                new DefaultKeyStoreParam(clazz, param.getPubPath(), param.getPublicAlias(), param.getStorePwd(), param.getKeyPwd());
+                new DefaultKeyStoreParam(clazz, param.getStorePath(), param.getKeyAlias(), param.getStorePwd(), param.getPriKeyPwd());
         LicenseParam licenseParams =
                 new DefaultLicenseParam(param.getSubJect(), preference, privateStoreParam, cipherParam);
         return licenseParams;

@@ -1,7 +1,9 @@
 package com.haventony.license.verify;
 
 import com.heaventony.license.AbstractLicense;
+import com.heaventony.license.ParamBean;
 import com.heaventony.license.verify.LicenseManagerHolder;
+import de.schlichtherle.license.LicenseContent;
 import de.schlichtherle.license.LicenseManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +23,8 @@ import java.util.Properties;
 public class VerifyLicense extends AbstractLicense{
 
     private static final Logger log = LoggerFactory.getLogger(VerifyLicense.class);
-    //common param
-    private static String PUBLICALIAS = "";
-    private static String STOREPWD = "";
-    private static String SUBJECT = "";
-    private static String licPath = "";
-    private static String pubPath = "";
-    private static String issuedTime = "";
+
+    private static ParamBean paramBean = new ParamBean();
 
     public void initParam(String propertiesPath) {
         // 获取参数
@@ -39,12 +36,11 @@ public class VerifyLicense extends AbstractLicense{
             e.printStackTrace();
             log.error(e.getMessage(),e);
         }
-        PUBLICALIAS = prop.getProperty("PUBLICALIAS");
-        STOREPWD = prop.getProperty("STOREPWD");
-        SUBJECT = prop.getProperty("SUBJECT");
-        licPath = prop.getProperty("licPath");
-        pubPath = prop.getProperty("pubPath");
-        issuedTime = prop.getProperty("issuedTime");
+        paramBean.setKeyAlias(prop.getProperty("PUBLICALIAS"));
+        paramBean.setStorePwd(prop.getProperty("STOREPWD"));
+        paramBean.setSubJect(prop.getProperty("SUBJECT"));
+        paramBean.setLicPath(prop.getProperty("licPath"));
+        paramBean.setStorePath(prop.getProperty("pubPath"));
     }
 
     public boolean verify(String propertiesPath) {
@@ -52,10 +48,10 @@ public class VerifyLicense extends AbstractLicense{
 
         /**************证书使用者端执行******************/
         LicenseManager licenseManager =
-                LicenseManagerHolder.getLicenseManager(initLicenseParams(this.getClass(),null));
+                LicenseManagerHolder.getLicenseManager(initLicenseParams(this.getClass(),paramBean));
         // 安装证书
         try {
-            licenseManager.install(new File(licPath));
+            licenseManager.install(new File(paramBean.getLicPath()));
             log.info("客户端安装证书成功!");
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +61,7 @@ public class VerifyLicense extends AbstractLicense{
         }
         // 验证证书
         try {
-            licenseManager.verify();
+            LicenseContent content = licenseManager.verify();
             log.info("客户端验证证书成功!");
         } catch (Exception e) {
             e.printStackTrace();
