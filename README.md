@@ -3,6 +3,8 @@ heaven是基于Spring Framework为基础，整合了开发中常用的框架和�
 * **heaven-common** 公共代码
 * **[heaven-exception](heaven-exception/README.md)** 异常处理模块
 * **[heaven-auth](heaven-auth/README.md)** 登陆鉴权模块
+* **[heaven-createLicense](heaven-createLicense/README.md)** 生成授权证书模块
+* **[heaven-verifyLicense](heaven-verifyLicense/README.md)**  验证授权模块
 
 
 
