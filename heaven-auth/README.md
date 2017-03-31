@@ -4,7 +4,7 @@ heaven-auth模块提供基本的访问验证功能。
 
 * 依赖spring mvc、heaven-exception
 * 通过@IgnoreToken注解设置是否需要验证token
-* 验证失败返回标准json信息
+* 验证失败拒绝访问，返回标准json信息
 
 
 
