@@ -2,39 +2,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>heaven</artifactId>
+        <groupId>com.heaventony</groupId>
+        <version>1.0.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.heaventony</groupId>
-    <artifactId>heaven</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0.0</version>
-    <modules>
-        <module>heaven-validation</module>
-        <module>heaven-auth</module>
-        <module>example</module>
-        <module>heaven-exception</module>
-        <module>heaven-common</module>
-        <module>heaven-spring</module>
-        <module>heaven-license</module>
-        <module>heaven-createLicense</module>
-        <module>heaven-verifyLicense</module>
-    </modules>
+    <artifactId>heaven-license</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
         </dependency>
+
         <dependency>
             <groupId>de.schlichtherle.truelicense</groupId>
             <artifactId>truelicense-core</artifactId>
-            <version>RELEASE</version>
+            <version>1.33</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.heaventony</groupId>
+            <artifactId>heaven-exception</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
