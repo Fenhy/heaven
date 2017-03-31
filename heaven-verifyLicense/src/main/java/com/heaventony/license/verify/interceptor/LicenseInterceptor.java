@@ -1,6 +1,8 @@
-package com.haventony.license.verify.interceptor;
+package com.heaventony.license.verify.interceptor;
 
-import com.haventony.license.verify.annotation.CheckLicense;
+import com.heaventony.license.verify.VerifyLicense;
+import com.heaventony.license.verify.annotation.CheckLicense;
+import com.heaventony.exceptions.LicenseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -8,6 +10,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,6 +26,9 @@ public class LicenseInterceptor implements HandlerInterceptor{
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Resource
+    private VerifyLicense verifyLicense;
+
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
         logger.info(request.getMethod() + ":" + request.getRequestURL());
         if (obj instanceof HandlerMethod && !request.getMethod().equals("OPTIONS")) {
@@ -32,7 +38,9 @@ public class LicenseInterceptor implements HandlerInterceptor{
 
             //CheckLicense注解可以作用于类或者方法上
             if (clazz.getAnnotation(CheckLicense.class) != null || method.getMethodAnnotation(CheckLicense.class) != null) {
-
+                if (!verifyLicense.verify()) {
+                    throw new LicenseException();
+                }
             }
 
         }

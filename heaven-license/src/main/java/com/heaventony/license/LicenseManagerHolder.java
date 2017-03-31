@@ -1,4 +1,4 @@
-package com.heaventony.license.verify;
+package com.heaventony.license;
 
 import de.schlichtherle.license.LicenseManager;
 import de.schlichtherle.license.LicenseParam;

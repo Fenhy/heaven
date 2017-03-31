@@ -1,6 +1,5 @@
 package com.heaventony.license;
 
-import com.heaventony.license.verify.LicenseManagerHolder;
 import de.schlichtherle.license.LicenseContent;
 import de.schlichtherle.license.LicenseManager;
 import org.slf4j.Logger;

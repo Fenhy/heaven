@@ -14,7 +14,6 @@ import java.util.Date;
  */
 @Data
 public class ParamBean {
-
     //创建证书时为私钥别名,验证证书是为公钥别名
     private String keyAlias ;
     //生成密钥对的密码

@@ -1,5 +1,6 @@
 package com.heaventony.web.config;
 
+import com.heaventony.license.verify.interceptor.LicenseInterceptor;
 import com.heaventony.auth.interceptor.AuthInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -22,6 +23,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Resource
     AuthInterceptor authInterceptor;
 
+    @Resource
+    LicenseInterceptor licenseInterceptor;
+
 //    @Bean
 //    public CommonsMultipartResolver commonsMultipartResolver() {
 //        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
@@ -30,6 +34,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //    }
 
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(licenseInterceptor);
         registry.addInterceptor(authInterceptor);
     }
 }

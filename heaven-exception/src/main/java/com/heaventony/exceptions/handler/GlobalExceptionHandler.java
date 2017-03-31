@@ -3,6 +3,7 @@ package com.heaventony.exceptions.handler;
 import com.heaventony.exceptions.AuthExcetpion;
 import com.heaventony.exceptions.Error;
 import com.heaventony.exceptions.ExceptionBody;
+import com.heaventony.exceptions.LicenseException;
 import com.heaventony.web.result.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -28,6 +29,12 @@ public class GlobalExceptionHandler {
     public Result authException(HttpServletResponse response) {
         response.setStatus(UNAUTH);
         return generateResult(new ExceptionBody(Error.AUTHORIZATION_FAILED));
+    }
+
+    @ExceptionHandler(LicenseException.class)
+    public Result licenseException(HttpServletResponse response) {
+        response.setStatus(UNAUTH);
+        return generateResult(new ExceptionBody(Error.LICENSE_FAILED));
     }
 
     private Result generateResult(ExceptionBody exBody) {

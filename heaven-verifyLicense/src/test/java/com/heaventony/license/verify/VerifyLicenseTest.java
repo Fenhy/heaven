@@ -1,4 +1,4 @@
-package com.haventony.license.verify; 
+package com.heaventony.license.verify;
 
 import org.junit.Test; 
 import org.junit.Before; 
@@ -40,7 +40,7 @@ public void testInitParam() throws Exception {
 public void testVerify() throws Exception { 
     VerifyLicense verifyLicense = new VerifyLicense();
 
-     System.out.println(verifyLicense.verify("/test.properties"));
+//     System.out.println(verifyLicense.verify());
 
 }
 

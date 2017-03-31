@@ -1,4 +1,4 @@
-package com.haventony.license.verify.annotation;
+package com.heaventony.license.verify.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

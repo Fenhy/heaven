@@ -1,5 +1,7 @@
 package com.heaventony.web.controllers;
 
+import com.heaventony.license.verify.annotation.CheckLicense;
+import com.heaventony.auth.annotation.IgnoreToken;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @RequestMapping(value = "{v}", method = RequestMethod.GET)
-//    @IgnoreToken
+    @IgnoreToken
+    @CheckLicense
     public String test(@PathVariable String v){
         return "test: " + v;
     }

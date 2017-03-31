@@ -11,7 +11,10 @@ public enum Error {
 
     UNKNOW_EXCEPTION(0, "unknow exception"),
 
+
+
     AUTHORIZATION_FAILED(10001, "authorization failed"),
+    LICENSE_FAILED (10002, "license failed"),
     ;
 
     private int code;
