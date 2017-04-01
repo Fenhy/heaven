@@ -105,7 +105,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 }
 ```
 
-###### 6、添加注解
+###### 6、使用注解
 
 在需要校验的接口上添加注解即可
 
