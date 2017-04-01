@@ -68,6 +68,28 @@ public class PropertiesConfig {
 }
 ```
 
+如果使用Spring xml来配置
+
+```
+<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">  
+       <property name="locations">  
+           <list>  
+               <value>classpath:param.properties</value>  
+           </list>  
+       </property>  
+    </bean>  
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">  
+        <property name="properties" ref="configProperties" />  
+    </bean>
+```
+
+那么就要重写com.heaventony.license.verify.ParamProperty了，取值改为
+
+```
+@Value("#{configProperties['public.alias']}")
+private String publicAlias;
+```
+
 ###### 5、配置拦截器
 
 ```
