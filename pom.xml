@@ -19,6 +19,7 @@
         <module>heaven-createLicense</module>
         <module>heaven-verifyLicense</module>
         <module>heaven-cookie</module>
+        <module>heaven-dbutils</module>
     </modules>
 
     <dependencies>
