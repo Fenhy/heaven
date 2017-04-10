@@ -26,7 +26,15 @@ public class BaseDao implements IBaseDao{
         return false;
     }
 
+    public boolean delete(String sql) {
+        return false;
+    }
+
     public boolean update(Object object) {
+        return false;
+    }
+
+    public boolean update(String sql) {
         return false;
     }
 
@@ -35,6 +43,10 @@ public class BaseDao implements IBaseDao{
     }
 
     public Object queryObject(Object obj) {
+        return null;
+    }
+
+    public Object query(String sql) {
         return null;
     }
 }

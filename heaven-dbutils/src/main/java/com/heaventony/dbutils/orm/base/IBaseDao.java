@@ -21,8 +21,12 @@ public interface IBaseDao<T> {
 
    boolean update(Object object);
 
+   boolean update(String sql);
+
    List<T> findAll();
 
    T queryObject(Object obj);
+
+   T query(String sql);
 
 }
