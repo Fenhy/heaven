@@ -5,7 +5,7 @@
     <parent>
         <artifactId>heaven</artifactId>
         <groupId>com.heaventony</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>example</artifactId>
@@ -32,6 +32,12 @@
             <groupId>com.heaventony</groupId>
             <artifactId>heaven-auth</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.visionvera</groupId>
+            <artifactId>ruban-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

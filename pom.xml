@@ -7,7 +7,7 @@
     <groupId>com.heaventony</groupId>
     <artifactId>heaven</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>heaven-validation</module>
         <module>heaven-auth</module>
