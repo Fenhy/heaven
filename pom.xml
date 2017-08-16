@@ -20,7 +20,14 @@
         <module>heaven-verifyLicense</module>
         <module>heaven-cookie</module>
         <module>heaven-dbutils</module>
+        <module>heaven-springtboot</module>
+        <module>heaven-shiro</module>
+        <module>heaven-jwt</module>
     </modules>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
 
     <dependencies>
         <dependency>
