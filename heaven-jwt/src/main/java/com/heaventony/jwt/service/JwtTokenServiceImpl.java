@@ -27,16 +27,16 @@ public class JwtTokenServiceImpl implements JwtTokenService {
      * @param id
      * @param subject
      * @param authorities
-     * @param minutes
+     * @param expire 过期时间，单位分支
      * @return
      */
-    public String createJwtToken(String id, String subject, String authorities, int minutes) {
+    public String createJwtToken(String id, String subject, String authorities, int expire) {
         Claims claims = Jwts.claims()
                 .setId(id)
                 .setSubject(subject)
                 .setIssuedAt(new Date());
-        if (minutes > 0)
-            claims.setExpiration(new DateTime(new Date()).plusMinutes(minutes).toDate());
+        if (expire > 0)
+            claims.setExpiration(new DateTime(new Date()).plusMinutes(expire).toDate());
         claims.put(AUTHORITIES, authorities);
         return Jwts.builder()
                 .setClaims(claims)

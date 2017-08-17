@@ -8,4 +8,6 @@ package com.heaventony.jwt.service;
  * Time: 下午10:56
  */
 public interface JwtTokenService {
+
+    public String createJwtToken(String id, String subect, String authorities, int expire);
 }
