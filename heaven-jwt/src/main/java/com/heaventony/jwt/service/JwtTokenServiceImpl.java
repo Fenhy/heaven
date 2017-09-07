@@ -27,7 +27,7 @@ public class JwtTokenServiceImpl implements JwtTokenService {
      * @param id
      * @param subject
      * @param authorities
-     * @param expire 过期时间，单位分支
+     * @param expire 过期时间，单位分钟
      * @return
      */
     public String createJwtToken(String id, String subject, String authorities, int expire) {

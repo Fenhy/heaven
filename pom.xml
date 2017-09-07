@@ -23,6 +23,8 @@
         <module>heaven-springtboot</module>
         <module>heaven-shiro</module>
         <module>heaven-jwt</module>
+        <module>heaven-privilege</module>
+        <module>heaven-mybatis</module>
     </modules>
 
     <properties>
