@@ -6,12 +6,13 @@ import org.testng.annotations.Test;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/8/16
  * Time: 下午6:23
  */
 public class JwtTokenServiceImplTest {
+    
     JwtTokenServiceImpl jwtTokenServiceImpl = new JwtTokenServiceImpl();
 
     @Test

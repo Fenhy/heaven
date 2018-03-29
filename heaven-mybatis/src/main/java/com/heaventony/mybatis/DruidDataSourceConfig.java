@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/9/6
  * Time: 下午2:54
@@ -60,10 +60,14 @@ public class DruidDataSourceConfig {
         dataSource.setPassword(password);
 
         dataSource.setDriverClassName(driverClassName);
-        dataSource.setInitialSize(initialSize);     //定义初始连接数
-        dataSource.setMinIdle(minIdle);             //最小空闲
-        dataSource.setMaxActive(maxActive);         //定义最大连接数
-        dataSource.setMaxWait(maxWait);             //最长等待超时时间
+        //定义初始连接数
+        dataSource.setInitialSize(initialSize);
+        //最小空闲
+        dataSource.setMinIdle(minIdle);
+        //定义最大连接数
+        dataSource.setMaxActive(maxActive);
+        //最长等待超时时间
+        dataSource.setMaxWait(maxWait);
 
         // 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
         dataSource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);

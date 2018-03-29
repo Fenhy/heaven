@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/29
  * Time: 下午3:25
@@ -20,12 +20,12 @@ public class ExceptionBody {
 
     }
 
-    public ExceptionBody (Error e) {
-        e = e == null ? Error.UNKNOW_EXCEPTION : e;
+    public ExceptionBody (StatusCode e) {
+        
+        e = e == null ? StatusCode.UNKNOW_EXCEPTION : e;
 
         this.code = e.getCode();
         this.message = e.getMessage();
-
 
     }
 

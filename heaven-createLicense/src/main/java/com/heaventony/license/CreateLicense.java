@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/31
  * Time: 上午11:39
@@ -19,7 +19,9 @@ public class CreateLicense extends AbstractLicense {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    // X500Princal是一个证书文件的固有格式，详见API
+    /**
+     X500Princal是一个证书文件的固有格式，详见API
+      */
     private final static X500Principal DEFAULTHOLDERANDISSUER = new X500Principal("CN=noryar, OU=noryar, O=noryar, L=china, ST=dalian, C=china");
 
 

@@ -11,6 +11,11 @@
 
     <artifactId>heaven-exception</artifactId>
 
+    <properties>
+        <spring.version>4.3.8.RELEASE</spring.version>
+        <heaven.version>1.0.0-SNAPSHOT</heaven.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -27,12 +32,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.heaventony</groupId>
             <artifactId>heaven-common</artifactId>
-            <version>1.0.0</version>
+            <version>${heaven.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.heaventony</groupId>
+            <artifactId>heaven-shiro</artifactId>
+            <version>${heaven.version}</version>
         </dependency>
     </dependencies>
 

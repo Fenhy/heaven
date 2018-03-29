@@ -2,6 +2,7 @@ package com.heaventony.auth.interceptor;
 
 import com.heaventony.auth.annotation.IgnoreToken;
 import com.heaventony.exceptions.AuthExcetpion;
+import com.heaventony.web.request.enums.RequestMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/29
  * Time: 上午10:38
@@ -34,16 +35,18 @@ public class AuthInterceptor implements HandlerInterceptor {
      * @return
      * @throws Exception
      */
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
         logger.info(request.getMethod() + ":" + request.getRequestURL());
-        if (obj instanceof HandlerMethod && !request.getMethod().equals("OPTIONS")) {
+        if (obj instanceof HandlerMethod && !RequestMethod.OPTIONS.equals(request.getMethod())) {
             HandlerMethod method = (HandlerMethod) obj;
             Object bean = method.getBean();
             Class<?> clazz = bean.getClass();
 
             //IngoreToken注解可以作用于类或者方法上
-            if (clazz.getAnnotation(IgnoreToken.class) != null || method.getMethodAnnotation(IgnoreToken.class) != null)
+            if (clazz.getAnnotation(IgnoreToken.class) != null || method.getMethodAnnotation(IgnoreToken.class) != null) {
                 return true;
+            }
             String token = request.getHeader(AUTHORIZATION_HEADER);
             if (token == null){
                 throw new AuthExcetpion();
@@ -52,10 +55,12 @@ public class AuthInterceptor implements HandlerInterceptor {
         return true;
     }
 
+    @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object o, ModelAndView modelAndView) throws Exception {
 
     }
 
+    @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object o, Exception e) throws Exception {
 
     }

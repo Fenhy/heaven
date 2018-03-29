@@ -6,7 +6,7 @@ import java.util.prefs.Preferences;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/31
  * Time: 下午12:01

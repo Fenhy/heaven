@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.4.3.RELEASE</version>
+            <version>1.5.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.heaventony</groupId>
@@ -34,11 +34,11 @@
             <version>1.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.visionvera</groupId>
-            <artifactId>ruban-core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.visionvera</groupId>-->
+            <!--<artifactId>ruban-core</artifactId>-->
+            <!--<version>1.0.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

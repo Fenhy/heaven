@@ -7,7 +7,7 @@ import org.springframework.core.io.ClassPathResource;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/31
  * Time: 下午5:37

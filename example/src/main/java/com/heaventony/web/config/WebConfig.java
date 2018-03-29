@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/29
  * Time: 上午11:54
@@ -33,6 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        return resolver;
 //    }
 
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(licenseInterceptor);
         registry.addInterceptor(authInterceptor);

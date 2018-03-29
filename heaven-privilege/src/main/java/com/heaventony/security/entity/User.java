@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/8/21
  * Time: 下午11:05

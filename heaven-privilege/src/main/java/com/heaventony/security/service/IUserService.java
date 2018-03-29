@@ -4,7 +4,7 @@ import com.heaventony.security.entity.User;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/8/22
  * Time: 下午10:54

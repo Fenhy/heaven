@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/3/28
  * Time: 上午10:10
@@ -18,7 +18,7 @@ public class DataValidateProcess {
 
 
     public static Map<String, Object> validate(Object bean) {
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<String, Object>(10);
         result.put("message", "验证通过");
         result.put("result", true);
 
@@ -62,10 +62,11 @@ public class DataValidateProcess {
     }
 
     public Map<String, Object> nullable(Object value, Field field) {
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<String, Object>(2);
         DataValidation annotation = field.getAnnotation(DataValidation.class);
 
-        if (!annotation.nullable() && (value == null || value.equals(""))){
+        boolean isNull = value == null || "".equals(value);
+        if (!annotation.nullable() && isNull){
             result.put("message", field.getName() + "字段不能为空");
             result.put("result", false);
         } else {
@@ -76,7 +77,7 @@ public class DataValidateProcess {
     }
 
     public Map<String, Object> maxLength(Object value, Field field) {
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<String, Object>(2);
         DataValidation annotation = field.getAnnotation(DataValidation.class);
         if (value != null && value.toString().length() > annotation.maxLength()){
             result.put("message", field.getName() + "字段长度超过" + annotation.maxLength());
@@ -89,7 +90,7 @@ public class DataValidateProcess {
     }
 
     public Map<String, Object> minLength(Object value, Field field) {
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<String, Object>(2);
         DataValidation annotation = field.getAnnotation(DataValidation.class);
         if (value != null && value.toString().length() < annotation.minLength()){
             result.put("message", field.getName() + "字段长度小于" + annotation.minLength());

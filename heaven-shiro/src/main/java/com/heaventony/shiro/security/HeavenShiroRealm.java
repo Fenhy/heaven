@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created with IntelliJ IDEA.
- * User: tonywill
+ * @author: tonywill
  * Email: tongwei1985@gmail.com
  * Date: 2017/8/17
  * Time: 下午6:10
@@ -24,6 +24,7 @@ public class HeavenShiroRealm extends AuthorizingRealm {
     @Autowired
     private IUserService userService;
 
+    @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
@@ -38,6 +39,7 @@ public class HeavenShiroRealm extends AuthorizingRealm {
      * @return
      * @throws AuthenticationException
      */
+    @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String loginName = (String)authenticationToken.getPrincipal();
         logger.info(loginName + "开始登陆验证...");
